@@ -11,7 +11,7 @@ namespace Cirkulär_Buffer_Uppgift
             {
                 char userInput;
 
-                Console.WriteLine("\nVill du skriva (i)n eller (h)ämta?");
+                Console.WriteLine("Vill du skriva (i)n eller (h)ämta?");
                 userInput = Console.ReadKey().KeyChar;
 
                 if (userInput == 'i')
@@ -19,7 +19,7 @@ namespace Cirkulär_Buffer_Uppgift
                     int inputValue;
                     Console.WriteLine("\nWrite a number");
                     while (!(int.TryParse(Console.ReadLine(), out inputValue)))
-                        Console.WriteLine("\nUse correct digits");
+                        Console.WriteLine("Use correct digits");
 
                     q.Enqueue(inputValue);
 
@@ -30,6 +30,7 @@ namespace Cirkulär_Buffer_Uppgift
                     Console.WriteLine();
                     if (q.Dequeue(ref tailValue))
                         Console.WriteLine(tailValue);
+
                 }
                 else
                     Console.WriteLine("\nVälj i eller h");

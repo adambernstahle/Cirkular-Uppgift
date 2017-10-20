@@ -10,6 +10,8 @@ namespace Cirkulär_Buffer_Uppgift
         private int head;
         private int tail;
         int take;
+        LinkedList lnklist = new LinkedList();
+
 
         public Queue(int n)
         {
@@ -30,7 +32,9 @@ namespace Cirkulär_Buffer_Uppgift
                 buf[head] = put;
                 
                 head = (head + 1) % buf.Length;
-                
+
+                lnklist.Add(Console.ReadLine());
+
             }
             return true;
         }
@@ -45,12 +49,14 @@ namespace Cirkulär_Buffer_Uppgift
             else
             {
                 take = buf[tail];
-
                 tail = (tail + 1) % buf.Length;
+
+                lnklist.Read();
+
                 return true;
             }
-        }
-        
+        }        
+
         private bool Full()
         {
             if (tail == ((head + 1) % buf.Length))
